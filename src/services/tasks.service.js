@@ -19,7 +19,6 @@ class TaskService {
         });
     }
     async updateTask(taskData) {
-        console.log(taskData);
         return await axios.put(`/tasks/${taskData.id}`, {
             title: taskData.title,
             description: taskData.description,

@@ -33,7 +33,14 @@
                 v-model:value="taskDateDue"
                 display-format="dd-MM-yyyy"
                 date-serialization-format="yyyy-MM-ddTHH:mm:ss"
+                validation-message-position="auto"
+              >
+              <DxValidator>
+                <DxRequiredRule
+                  message="Date due is required field"
                 />
+              </DxValidator>
+            </DxDateBox>
             </div>
           </div>
         </div>
@@ -84,6 +91,10 @@
   import { DxTagBox } from "devextreme-vue/tag-box";
   import { DxCheckBox } from "devextreme-vue/check-box";
   import { DxDateBox } from "devextreme-vue/date-box";
+  import {
+  DxValidator,
+  DxRequiredRule,
+} from "devextreme-vue/validator";
   const userStore = useUserStore();
   const taskStore = useTaskStore();
   const route = useRoute();
